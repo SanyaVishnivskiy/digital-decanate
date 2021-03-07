@@ -12,6 +12,8 @@ namespace Server
 {
     public class Startup
     {
+        private readonly string AllowAllOrigin = "_allowAll";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -22,6 +24,17 @@ namespace Server
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: AllowAllOrigin,
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin();
+                        builder.AllowAnyMethod();
+                        builder.AllowAnyHeader();
+                    });
+            });
+
             services.AddControllers();
 
             var connection = Configuration.GetValue<string>("DBConnection");

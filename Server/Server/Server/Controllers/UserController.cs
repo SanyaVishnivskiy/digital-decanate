@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Server.Business.Users.Component;
 using Server.Business.Users.Models;
 
@@ -11,16 +12,19 @@ namespace Server.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserComponent _component;
+        private readonly ILogger<UserController> _logger;
 
-        public UserController(IUserComponent component)
+        public UserController(IUserComponent component, ILogger<UserController> logger)
         {
             _component = component;
+            _logger = logger;
         }
 
         [HttpGet]
         [Route("{id}")]
         public async Task<IActionResult> GetUserById(string id)
         {
+            _logger.LogInformation("Getting user " + id);
             var user = await _component.Get(id);
             if (user == null)
             {
