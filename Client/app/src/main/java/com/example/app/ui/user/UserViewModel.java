@@ -5,9 +5,9 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.app.api.user.IUserGateway;
-import com.example.app.api.user.StubUserGateway;
+import com.example.app.api.stubs.user.StubUserGateway;
 import com.example.app.api.user.User;
-import com.example.app.api.user.UserGateway;
+import com.example.app.api.user.UserGatewayFactory;
 
 import java.util.concurrent.ExecutionException;
 
@@ -16,12 +16,12 @@ public class UserViewModel extends ViewModel {
     private MutableLiveData<User> _user;
 
     public UserViewModel() {
-        _gateway = new StubUserGateway();
+        _gateway = new UserGatewayFactory().create();
         _user = new MutableLiveData<>();
     }
 
-    public LiveData<User> getUser() throws ExecutionException, InterruptedException {
-        User user = _gateway.getCurrentUser();
+    public LiveData<User> getUser() {
+        User user = _gateway.getById("1");
         _user.setValue(user);
         return _user;
     }
