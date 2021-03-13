@@ -4,5 +4,5 @@ import com.example.app.api.marks.Models.Marks;
 
 public interface IMarksGateway {
     Marks getForGroup(String groupId);
-    void AddOrUpdate(Marks marks);
+    void addOrUpdate(Marks marks);
 }
