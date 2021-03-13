@@ -10,7 +10,6 @@ public class Group {
     private List<User> users;
     private String headid;
 
-
     public Group(String id, String number, List<User> users, String headid) {
         this.id = id;
         this.number = number;
