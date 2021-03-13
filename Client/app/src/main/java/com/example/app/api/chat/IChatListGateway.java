@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface IChatListGateway {
     List<Chat> getChats(String userId);
-    void Create(Chat chat);
+    void add(Chat chat);
 }

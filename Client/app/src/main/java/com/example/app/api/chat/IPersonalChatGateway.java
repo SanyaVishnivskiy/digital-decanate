@@ -8,5 +8,5 @@ import java.util.List;
 public interface IPersonalChatGateway {
     List<Message> getMessages();
     Chat getChatById(String id);
-    void Send(Message message);
+    void send(Message message);
 }

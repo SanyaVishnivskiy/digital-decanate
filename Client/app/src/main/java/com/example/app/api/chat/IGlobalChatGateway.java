@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface IGlobalChatGateway {
     List<Message> getMessages();
-    void Send(Message message);
+    void send(Message message);
 }
