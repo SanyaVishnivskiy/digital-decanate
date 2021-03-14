@@ -28,12 +28,13 @@ public class AuthActivity extends AppCompatActivity {
         String token = null;
         try {
              token = _gateway.authenticate(model);
-        } catch(Exception e){
-            e.getMessage();
+        } catch (Exception e){
+            displayError(e.getMessage());
+            token = null;
         }
 
         if (token == null || token.isEmpty()) {
-            displayError();
+            displayError("Email or password is not valid");
             return;
         }
 
@@ -41,7 +42,7 @@ public class AuthActivity extends AppCompatActivity {
         redirectToMainActivity();
     }
 
-    private void displayError() {
+    protected void displayError(String message) {
         //TODO:
     }
 
