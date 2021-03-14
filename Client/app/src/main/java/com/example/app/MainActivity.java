@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.Menu;
 import android.widget.ImageView;
 
+import com.example.app.logic.user.UserContext;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -26,6 +27,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if(!checkIsAuthorized()){
+            redirectToLogin();
+        }
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -50,6 +56,19 @@ public class MainActivity extends AppCompatActivity {
 
         //addListenerToUserImage();
     }
+
+    private boolean checkIsAuthorized() {
+        return UserContext.getInstance().isAuthorized();
+    }
+
+    private void redirectToLogin() {
+        Intent functionTab = new Intent(
+                this.getApplicationContext(),
+                AuthActivity.class);
+
+        startActivity(functionTab);
+    }
+
 
     private void addListenerToUserImage() {
         ImageView view = findViewById(R.id.profile_image);
