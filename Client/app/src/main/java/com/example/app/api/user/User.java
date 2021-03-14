@@ -13,20 +13,6 @@ public class User {
 
     private String role;
 
-    public User(String id, String name, String lastName, String phoneNumber, String email, String studentTicket, String groupId, String faculty, int course, String role) {
-        this.id = id;
-        this.name = name;
-        this.lastName = lastName;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.studentTicket = studentTicket;
-        this.groupId = groupId;
-        this.faculty = faculty;
-        this.course = course;
-        this.role = role;
-    }
-
-
     public String getId() {
         return id;
     }
@@ -39,8 +25,44 @@ public class User {
         return lastName;
     }
 
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getStudentTicket() {
+        return studentTicket;
+    }
+
+    public String getGroupId() {
+        return groupId;
+    }
+
+    public String getFaculty() {
+        return faculty;
+    }
+
+    public int getCourse() {
+        return course;
+    }
+
     public String getRole() {
         return role;
     }
 
+    public User(String id, String name, String lastName, String phoneNumber, String email, String studentTicket, String groupId, String faculty, int course, String role) {
+        this.id = id;
+        this.name = name;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.studentTicket = studentTicket;
+        this.groupId = groupId;
+        this.faculty = faculty;
+        this.course = course;
+        this.role = role;
+    }
 }

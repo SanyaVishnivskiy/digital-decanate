@@ -10,7 +10,7 @@ public class MarksGatewayStub implements IMarksGateway {
     }
 
     @Override
-    public void AddOrUpdate(Marks marks) {
+    public void addOrUpdate(Marks marks) {
 
     }
 }
