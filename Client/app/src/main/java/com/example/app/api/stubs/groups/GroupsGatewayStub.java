@@ -4,7 +4,7 @@ import com.example.app.api.groups.IGroupsGateway;
 
 import androidx.constraintlayout.widget.Group;
 
-public class GroupsGateway implements IGroupsGateway {
+public class GroupsGatewayStub implements IGroupsGateway {
 
     @Override
     public void addOrUpdate(Group group) {

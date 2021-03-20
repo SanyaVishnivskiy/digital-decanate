@@ -5,7 +5,7 @@ import com.example.app.api.auth.Models.AuthModel;
 import com.example.app.api.auth.Models.ChangePasswordModel;
 import com.example.app.api.stubs.user.UsersCollection;
 import com.example.app.api.user.Models.UserWithPassword;
-import com.example.app.api.user.User;
+import com.example.app.api.user.Models.User;
 
 public class AuthGatewayStub implements IAuthGateway {
     @Override

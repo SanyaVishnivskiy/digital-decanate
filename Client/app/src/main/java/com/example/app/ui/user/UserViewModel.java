@@ -5,11 +5,8 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.app.api.user.IUserGateway;
-import com.example.app.api.stubs.user.StubUserGateway;
-import com.example.app.api.user.User;
+import com.example.app.api.user.Models.User;
 import com.example.app.api.user.UserGatewayFactory;
-
-import java.util.concurrent.ExecutionException;
 
 public class UserViewModel extends ViewModel {
     private final IUserGateway _gateway;

@@ -1,5 +1,6 @@
 package com.example.app.api.user;
 
+import com.example.app.api.user.Models.User;
 import com.example.app.api.user.Models.UserWithPassword;
 
 public interface IUserGateway {

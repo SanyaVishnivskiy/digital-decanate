@@ -1,7 +1,5 @@
 package com.example.app.api.user.Models;
 
-import com.example.app.api.user.User;
-
 public class UserWithPassword extends User {
     private String password;
 
