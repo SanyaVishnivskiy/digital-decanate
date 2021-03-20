@@ -7,7 +7,7 @@ import com.example.app.api.user.User;
 public class StubUserGateway implements IUserGateway {
 
     @Override
-    public void addOrUpdate(UserWithPassword user) {
+    public void addOrUpdate(User user) {
         UsersCollection.getInstance().Add(user);
     }
 

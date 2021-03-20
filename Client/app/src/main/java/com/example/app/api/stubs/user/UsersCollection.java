@@ -1,5 +1,11 @@
 package com.example.app.api.stubs.user;
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
+import com.example.app.api.user.Models.UserWithChangePasswordModel;
+import com.example.app.api.user.Models.UserWithPassword;
 import com.example.app.api.user.User;
 
 import java.util.Collections;
@@ -29,7 +35,18 @@ public class UsersCollection {
     }
 
     public void Add(User user) {
-        users.put(user.getId(), user);
+        User existing = getById(user.getId());
+        if (existing == null) {
+            users.put(user.getId(), user);
+        }
+
+        User toSave = new User(user);
+        if (existing instanceof UserWithPassword) {
+            toSave = new UserWithPassword(
+                user,
+                ((UserWithPassword)existing).getPassword());
+        }
+        users.put(toSave.getId(), toSave);
     }
 
     public User getByEmail(String email) {
@@ -42,5 +59,10 @@ public class UsersCollection {
         }
 
         return null;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public void update(User user) {
+        users.replace(user.getId(), user);
     }
 }
