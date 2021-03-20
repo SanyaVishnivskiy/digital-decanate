@@ -2,7 +2,7 @@ package com.example.app.api.stubs.user;
 
 import com.example.app.api.user.IUserGateway;
 import com.example.app.api.user.Models.UserWithPassword;
-import com.example.app.api.user.User;
+import com.example.app.api.user.Models.User;
 
 public class StubUserGateway implements IUserGateway {
 

@@ -1,7 +1,7 @@
 package com.example.app.logic.user;
 
 import com.example.app.api.user.IUserGateway;
-import com.example.app.api.user.User;
+import com.example.app.api.user.Models.User;
 import com.example.app.api.user.UserGatewayFactory;
 
 public class UserContext implements IUserContext {

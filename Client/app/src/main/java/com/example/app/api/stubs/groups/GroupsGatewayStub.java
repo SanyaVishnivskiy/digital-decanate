@@ -5,7 +5,7 @@ import com.example.app.api.groups.Models.Group;
 
 import java.util.ArrayList;
 
-public class GroupsGateway implements IGroupsGateway {
+public class GroupsGatewayStub implements IGroupsGateway {
 
 
     @Override

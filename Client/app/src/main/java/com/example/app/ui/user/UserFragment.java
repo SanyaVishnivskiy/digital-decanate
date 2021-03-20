@@ -16,9 +16,9 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.app.R;
 import com.example.app.api.user.Models.UserWithChangePasswordModel;
 import com.example.app.api.user.Models.UserWithPassword;
-import com.example.app.api.user.User;
 import com.example.app.logic.user.RolesConstants;
 import com.example.app.ui.common.ValidationError;
+import com.example.app.api.user.Models.User;
 
 public class UserFragment extends Fragment {
     private UserViewModel userViewModel;

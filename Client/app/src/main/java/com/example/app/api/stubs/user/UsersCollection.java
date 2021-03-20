@@ -6,10 +6,11 @@ import androidx.annotation.RequiresApi;
 
 import com.example.app.api.user.Models.UserWithChangePasswordModel;
 import com.example.app.api.user.Models.UserWithPassword;
-import com.example.app.api.user.User;
+import com.example.app.api.user.Models.User;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Set;
 
 public class UsersCollection {
@@ -64,5 +65,9 @@ public class UsersCollection {
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void update(User user) {
         users.replace(user.getId(), user);
+    }
+
+    public  List<User> getAll(){
+        return new ArrayList<User>(users.values());
     }
 }

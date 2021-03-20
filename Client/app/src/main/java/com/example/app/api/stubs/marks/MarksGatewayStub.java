@@ -6,11 +6,11 @@ import com.example.app.api.marks.Models.Marks;
 public class MarksGatewayStub implements IMarksGateway {
     @Override
     public Marks getForGroup(String groupId) {
-        return null;
+        return MarksCollection.getInstance().getByGroupId(groupId);
     }
 
     @Override
     public void addOrUpdate(Marks marks) {
-
+        MarksCollection.getInstance().Add(marks);
     }
 }

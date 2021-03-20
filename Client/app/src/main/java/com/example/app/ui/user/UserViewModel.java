@@ -12,7 +12,7 @@ import com.example.app.api.user.IUserGateway;
 import com.example.app.api.user.Models.InvalidPasswordException;
 import com.example.app.api.user.Models.PasswordNotMatchException;
 import com.example.app.api.user.Models.UserWithChangePasswordModel;
-import com.example.app.api.user.User;
+import com.example.app.api.user.Models.User;
 import com.example.app.api.user.UserGatewayFactory;
 import com.example.app.logic.user.UserContext;
 import com.example.app.api.groups.Models.Group;

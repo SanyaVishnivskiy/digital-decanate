@@ -1,8 +1,7 @@
 package com.example.app.api.chat.Models;
 
-import com.example.app.api.user.User;
+import com.example.app.api.user.Models.User;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 
 public class Message {

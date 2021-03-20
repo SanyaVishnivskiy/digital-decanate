@@ -1,4 +1,4 @@
-package com.example.app.api.user;
+package com.example.app.api.user.Models;
 
 public class User {
     private String id;
