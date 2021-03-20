@@ -1,5 +1,11 @@
 package com.example.app.api.stubs.user;
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
+import com.example.app.api.user.Models.UserWithChangePasswordModel;
+import com.example.app.api.user.Models.UserWithPassword;
 import com.example.app.api.user.Models.User;
 
 import java.util.ArrayList;
@@ -17,20 +23,32 @@ public class UsersCollection {
     }
 
     private UsersCollection() {
-        Init();
+
     }
 
-    private void Init(){
-        users.put("1", new User("1", "name", "lastname", "1564", "a@m.c", "456", "1", "F", 1, "Admin"));
-        users.put("2", new User("2", "name", "lastname", "1564", "u@m.c", "456", "1", "F", 1, "User"));
+    public void init(List<User> users){
+        for (User user: users) {
+            add(user);
+        }
     }
 
     public User getById(String id) {
         return users.get(id);
     }
 
-    public void Add(User user) {
-        users.put(user.getId(), user);
+    public void add(User user) {
+        User existing = getById(user.getId());
+        if (existing == null) {
+            users.put(user.getId(), user);
+        }
+
+        User toSave = new User(user);
+        if (existing instanceof UserWithPassword) {
+            toSave = new UserWithPassword(
+                user,
+                ((UserWithPassword)existing).getPassword());
+        }
+        users.put(toSave.getId(), toSave);
     }
 
     public User getByEmail(String email) {
@@ -44,6 +62,12 @@ public class UsersCollection {
 
         return null;
     }
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public void update(User user) {
+        users.replace(user.getId(), user);
+    }
+
     public  List<User> getAll(){
         return new ArrayList<User>(users.values());
     }

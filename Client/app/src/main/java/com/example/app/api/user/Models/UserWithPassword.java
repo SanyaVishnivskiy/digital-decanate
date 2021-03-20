@@ -11,4 +11,18 @@ public class UserWithPassword extends User {
         super(id, name, lastName, phoneNumber, email, studentTicket, groupId, faculty, course, role);
         this.password = password;
     }
+
+    public UserWithPassword(User user, String password) {
+        super(  user.getId(),
+                user.getName(),
+                user.getLastName(),
+                user.getPhoneNumber(),
+                user.getEmail(),
+                user.getStudentTicket(),
+                user.getGroupId(),
+                user.getFaculty(),
+                user.getCourse(),
+                user.getRole());
+        this.password = password;
+    }
 }

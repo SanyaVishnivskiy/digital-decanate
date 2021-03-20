@@ -3,6 +3,7 @@ package com.example.app;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +22,15 @@ public class AuthActivity extends AppCompatActivity {
         setContentView(R.layout.auth_layout);
 
         _gateway = new AuthGatewayFactory().create();
+
+        //TODO: comment, did to test without need to login every time
+        disableLogin();
+    }
+
+    private void disableLogin() {
+        EditText view = findViewById(R.id.auth_email_input);
+        view.setText("a@m.c");
+        login(null);
     }
 
     public void login(View view) {

@@ -15,9 +15,22 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
 
+    <string name="user_profile">User Profile</string>
     <string name="menu_profile">Profile</string>
     <string name="user_id_text">Id:</string>
     <string name="user_name_text">Name:</string>
     <string name="user_lastName_text">LastName:</string>
+    <string name="user_faculty_text">Faculty:</string>
+    <string name="user_group_text">Group:</string>
+    <string name="user_course_text">Course:</string>
+    <string name="user_student_ticket_text">Student ticket:</string>
+    <string name="user_email_text">Email:</string>
+    <string name="user_phone_text">Phone:</string>
     <string name="user_role_text">Role:</string>
+    <string name="user_changePassword_text">Change Password</string>
+    <string name="user_oldPass_text">Old Password</string>
+    <string name="user_newPass_text">New Password</string>
+    <string name="user_confirmPass_text">Confirm Password</string>
+
+    <string name="common_Save_text">Save</string>
 </resources>

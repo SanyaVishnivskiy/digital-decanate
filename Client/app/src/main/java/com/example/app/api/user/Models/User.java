@@ -65,4 +65,17 @@ public class User {
         this.course = course;
         this.role = role;
     }
+
+    public User(User user) {
+        this.id = user.getId();
+        this.name = user.getName();
+        this.lastName = user.getLastName();
+        this.phoneNumber = user.getPhoneNumber();
+        this.email = user.getEmail();
+        this.studentTicket = user.getStudentTicket();
+        this.groupId = user.getGroupId();
+        this.faculty = user.getFaculty();
+        this.course = user.getCourse();
+        this.role = user.getRole();
+    }
 }
