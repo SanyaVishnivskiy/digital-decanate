@@ -1,14 +1,13 @@
 package com.example.app.api.stubs.user;
 
 import com.example.app.api.user.IUserGateway;
-import com.example.app.api.user.Models.UserWithPassword;
 import com.example.app.api.user.Models.User;
 
 public class StubUserGateway implements IUserGateway {
 
     @Override
     public void addOrUpdate(User user) {
-        UsersCollection.getInstance().Add(user);
+        UsersCollection.getInstance().add(user);
     }
 
     @Override

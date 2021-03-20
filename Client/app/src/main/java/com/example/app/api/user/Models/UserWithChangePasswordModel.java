@@ -1,7 +1,6 @@
 package com.example.app.api.user.Models;
 
 import com.example.app.api.auth.Models.ChangePasswordModel;
-import com.example.app.api.user.User;
 
 public class UserWithChangePasswordModel extends User {
     public ChangePasswordModel getChangePasswordModel() {

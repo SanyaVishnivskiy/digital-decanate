@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.Menu;
 import android.widget.ImageView;
 
+import com.example.app.api.stubs.StubsInitializer;
+import com.example.app.logic.common.GlobalState;
 import com.example.app.logic.user.UserContext;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        InitIfNotInitialized();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -55,6 +58,13 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
 
         //addListenerToUserImage();
+    }
+
+    private void InitIfNotInitialized() {
+        if (!GlobalState.isInitialized()) {
+            StubsInitializer.init();
+            GlobalState.setInitialized(true);
+        }
     }
 
     private boolean checkIsAuthorized() {

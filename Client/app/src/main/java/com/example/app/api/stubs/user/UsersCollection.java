@@ -23,19 +23,20 @@ public class UsersCollection {
     }
 
     private UsersCollection() {
-        Init();
+
     }
 
-    private void Init(){
-        users.put("1", new User("1", "name", "lastname", "1564", "a@m.c", "456", "1", "F", 1, "Admin"));
-        users.put("2", new User("2", "name", "lastname", "1564", "u@m.c", "456", "1", "F", 1, "User"));
+    public void init(List<User> users){
+        for (User user: users) {
+            add(user);
+        }
     }
 
     public User getById(String id) {
         return users.get(id);
     }
 
-    public void Add(User user) {
+    public void add(User user) {
         User existing = getById(user.getId());
         if (existing == null) {
             users.put(user.getId(), user);

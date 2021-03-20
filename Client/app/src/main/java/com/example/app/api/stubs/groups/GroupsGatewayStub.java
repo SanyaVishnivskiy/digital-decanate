@@ -15,12 +15,12 @@ public class GroupsGatewayStub implements IGroupsGateway {
 
     @Override
     public Group getById(String id) {
-        return new Group(id, "424", new ArrayList<>(), "1");
+        return GroupsCollection.getInstance().getById(id);
     }
 
     @Override
     public Group getByName(String name) {
-        return new Group("1", name, new ArrayList<>(), "1");
+        return GroupsCollection.getInstance().getByName(name);
     }
 
 }

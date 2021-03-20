@@ -17,22 +17,34 @@ public class GroupsCollection {
     }
 
     private GroupsCollection() {
-        Init();
+
     }
 
-    private void Init(){
-       groups.put("1",new Group("1","424",UsersCollection.getInstance().getAll(),"1"));
+    public void init(List<Group> groups) {
+        for(Group group : groups){
+            add(group);
+        }
     }
 
     public Group getById(String id) {
         return groups.get(id);
     }
 
-    public void Add(Group group) {
+    public void add(Group group) {
         groups.put(group.getId(), group);
     }
 
     public List<Group> getAll(){
         return new ArrayList<Group>(groups.values());
+    }
+
+    public Group getByName(String name) {
+        for (Group group : groups.values()) {
+            if (group.getNumber().equals(name)){
+                return group;
+            }
+        }
+
+        return null;
     }
 }
