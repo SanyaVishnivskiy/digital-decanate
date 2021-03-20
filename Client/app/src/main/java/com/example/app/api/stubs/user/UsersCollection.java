@@ -1,9 +1,10 @@
 package com.example.app.api.stubs.user;
 
-import com.example.app.api.user.User;
+import com.example.app.api.user.Models.User;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Set;
 
 public class UsersCollection {
@@ -42,5 +43,8 @@ public class UsersCollection {
         }
 
         return null;
+    }
+    public  List<User> getAll(){
+        return new ArrayList<User>(users.values());
     }
 }

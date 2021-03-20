@@ -1,7 +1,6 @@
 package com.example.app.ui.user;
 
 import android.os.Bundle;
-import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,10 +14,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.app.R;
-import com.example.app.api.user.User;
-import com.example.app.ui.gallery.GalleryViewModel;
-
-import java.util.concurrent.ExecutionException;
+import com.example.app.api.user.Models.User;
 
 public class UserFragment extends Fragment {
     private UserViewModel userViewModel;
