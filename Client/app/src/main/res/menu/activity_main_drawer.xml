@@ -22,5 +22,10 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_profile" />
 
+        <item
+            android:id="@+id/nav_create_user"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/create_user" />
+
     </group>
 </menu>

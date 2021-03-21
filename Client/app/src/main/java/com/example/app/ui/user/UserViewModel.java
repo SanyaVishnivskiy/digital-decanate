@@ -14,74 +14,28 @@ import com.example.app.api.user.Models.PasswordNotMatchException;
 import com.example.app.api.user.Models.UserWithChangePasswordModel;
 import com.example.app.api.user.Models.User;
 import com.example.app.api.user.UserGatewayFactory;
+import com.example.app.logic.user.IUserComponent;
+import com.example.app.logic.user.UserComponent;
 import com.example.app.logic.user.UserContext;
 import com.example.app.api.groups.Models.Group;
 
 public class UserViewModel extends ViewModel {
-    private final IUserGateway _gateway;
-    private final IAuthGateway _authGateway;
-    private final IGroupsGateway _groupsGateway;
+    private final IUserComponent _component;
     private MutableLiveData<User> _user;
 
     public UserViewModel() {
-        _gateway = new UserGatewayFactory().create();
-        _authGateway = new AuthGatewayFactory().create();
-        _groupsGateway = new GroupGatewayFactory().createGroupListGateway();
+        _component = new UserComponent();
         _user = new MutableLiveData<>();
     }
 
     public LiveData<User> getUser() {
-        String id = UserContext.getInstance().getCurrentUser().getId();
-        User user = _gateway.getById(id);
-        user = setGroupName(user);
+        User user = _component.getCurrentUser();
 
         _user.setValue(user);
         return _user;
     }
 
-    private User setGroupName(User user) {
-        //TODO: remap to new model because it's confusing that groupName will
-        // be stored in groupId field
-        Group group = _groupsGateway.getById(user.getGroupId());
-
-        return new User(
-            user.getId(),
-            user.getName(),
-            user.getLastName(),
-            user.getPhoneNumber(),
-            user.getEmail(),
-            user.getStudentTicket(),
-            group.getNumber(),
-            user.getFaculty(),
-            user.getCourse(),
-            user.getRole()
-        );
-    }
-
     public void save(UserWithChangePasswordModel user) throws PasswordNotMatchException, InvalidPasswordException {
-        //TODO: use another user model, groupId here is groupName
-        Group group = _groupsGateway.getByName(user.getGroupId());
-        user = setGroupId(user, group);
-
-        _gateway.addOrUpdate(user);
-        if (user.getChangePasswordModel() != null) {
-            _authGateway.changePassword(user.getChangePasswordModel());
-        }
-    }
-
-    private UserWithChangePasswordModel setGroupId(UserWithChangePasswordModel user, Group group) {
-        return new UserWithChangePasswordModel(
-            user.getId(),
-            user.getName(),
-            user.getLastName(),
-            user.getPhoneNumber(),
-            user.getEmail(),
-            user.getStudentTicket(),
-            group.getId(),
-            user.getFaculty(),
-            user.getCourse(),
-            user.getRole(),
-            user.getChangePasswordModel()
-        );
+        _component.save(user);
     }
 }

@@ -1,5 +1,7 @@
 package com.example.app.api.user.Models;
 
+import java.util.Objects;
+
 public class User {
     private String id;
     private String name;
@@ -77,5 +79,27 @@ public class User {
         this.faculty = user.getFaculty();
         this.course = user.getCourse();
         this.role = user.getRole();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return course == user.course &&
+                Objects.equals(id, user.id) &&
+                Objects.equals(name, user.name) &&
+                Objects.equals(lastName, user.lastName) &&
+                Objects.equals(phoneNumber, user.phoneNumber) &&
+                Objects.equals(email, user.email) &&
+                Objects.equals(studentTicket, user.studentTicket) &&
+                Objects.equals(groupId, user.groupId) &&
+                Objects.equals(faculty, user.faculty) &&
+                Objects.equals(role, user.role);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, lastName, phoneNumber, email, studentTicket, groupId, faculty, course, role);
     }
 }

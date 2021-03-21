@@ -35,7 +35,7 @@ public class UserContext implements IUserContext {
         refreshUser();
     }
 
-    private void refreshUser() {
+    public void refreshUser() {
         //TODO: handle case when token expired
         currentUser = userGateway.getByToken(token);
     }
