@@ -16,6 +16,7 @@
     <string name="menu_slideshow">Slideshow</string>
 
     <string name="user_profile">User Profile</string>
+    <string name="create_user">Update User</string>
     <string name="menu_profile">Profile</string>
     <string name="user_id_text">Id:</string>
     <string name="user_name_text">Name:</string>
@@ -31,6 +32,7 @@
     <string name="user_oldPass_text">Old Password</string>
     <string name="user_newPass_text">New Password</string>
     <string name="user_confirmPass_text">Confirm Password</string>
+    <string name="user_password_text">Password:</string>
 
     <string name="common_Save_text">Save</string>
 </resources>

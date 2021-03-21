@@ -2,6 +2,8 @@ package com.example.app.ui.user;
 
 import com.example.app.api.auth.Models.ChangePasswordModel;
 import com.example.app.api.user.Models.UserWithChangePasswordModel;
+import com.example.app.api.user.Models.UserWithPassword;
+import com.example.app.ui.createUser.CreateUserModelWithViews;
 
 public class UserConverter {
     public UserWithChangePasswordModel convert(UserModelWithViews user){
@@ -35,6 +37,22 @@ public class UserConverter {
             String.valueOf(user.getOldPassword().getText()),
             String.valueOf(user.getNewPassword().getText()),
             String.valueOf(user.getConfirmPassword().getText())
+        );
+    }
+
+    public UserWithPassword convert(CreateUserModelWithViews user) {
+        return new UserWithPassword(
+                String.valueOf(user.getId().getText()),
+                String.valueOf(user.getName().getText()),
+                String.valueOf(user.getLastName().getText()),
+                String.valueOf(user.getPhoneNumber().getText()),
+                String.valueOf(user.getEmail().getText()),
+                String.valueOf(user.getStudentTicket().getText()),
+                String.valueOf(user.getGroupName().getText()),
+                String.valueOf(user.getFaculty().getText()),
+                Integer.parseInt(String.valueOf(user.getCourse().getText())),
+                String.valueOf(user.getRole().getText()),
+                String.valueOf(user.getPassword().getText())
         );
     }
 }

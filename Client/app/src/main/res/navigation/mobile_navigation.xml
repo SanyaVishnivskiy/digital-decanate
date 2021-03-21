@@ -27,5 +27,11 @@
         android:id="@+id/nav_user_profile"
         android:name="com.example.app.ui.user.UserFragment"
         android:label="@string/menu_profile"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/user_profile_layout" />
+
+    <fragment
+        android:id="@+id/nav_create_user"
+        android:name="com.example.app.ui.createUser.CreateUserFragment"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/create_user_layout" />
 </navigation>
