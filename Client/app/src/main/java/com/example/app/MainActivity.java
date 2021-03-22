@@ -7,7 +7,9 @@ import android.view.Menu;
 import android.widget.ImageView;
 
 import com.example.app.api.stubs.StubsInitializer;
+import com.example.app.api.user.Models.User;
 import com.example.app.logic.common.GlobalState;
+import com.example.app.logic.user.RolesConstants;
 import com.example.app.logic.user.UserContext;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -37,27 +39,32 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
+                R.id.nav_create_user, R.id.nav_user_profile)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        //addListenerToUserImage();
+        hideNotAllowedMenuItems();
+    }
+
+    private void hideNotAllowedMenuItems() {
+        User user = UserContext.getInstance().getCurrentUser();
+        if (user == null)
+            return;
+
+        String role = user.getRole();
+//        if (role.equals(RolesConstants.Admin)) {
+//            findViewById(R.id.nav_create_user).setVisibility(View.INVISIBLE);
+//        }
     }
 
     private void InitIfNotInitialized() {
@@ -77,15 +84,6 @@ public class MainActivity extends AppCompatActivity {
                 AuthActivity.class);
 
         startActivity(functionTab);
-    }
-
-
-    private void addListenerToUserImage() {
-        ImageView view = findViewById(R.id.profile_image);
-        view.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-            }
-        });
     }
 
     @Override

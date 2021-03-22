@@ -27,5 +27,10 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/create_user" />
 
+        <item
+            android:id="@+id/nav_schedule"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Schedule" />
+
     </group>
 </menu>

@@ -1,11 +1,15 @@
 package com.example.app.logic.user;
 
+import com.example.app.api.groups.GroupGatewayFactory;
+import com.example.app.api.groups.IGroupsGateway;
+import com.example.app.api.groups.Models.Group;
 import com.example.app.api.user.IUserGateway;
 import com.example.app.api.user.Models.User;
 import com.example.app.api.user.UserGatewayFactory;
 
 public class UserContext implements IUserContext {
-    IUserGateway userGateway;
+    private final IGroupsGateway groupsGateway;
+    private final IUserGateway userGateway;
     User currentUser;
     String token;
 
@@ -17,6 +21,7 @@ public class UserContext implements IUserContext {
 
     private UserContext() {
         userGateway = new UserGatewayFactory().create();
+        groupsGateway = new GroupGatewayFactory().createGroupListGateway();
     }
 
     @Override
@@ -38,5 +43,10 @@ public class UserContext implements IUserContext {
     public void refreshUser() {
         //TODO: handle case when token expired
         currentUser = userGateway.getByToken(token);
+    }
+
+    public Group getCurrentUserGroup() {
+        String id = currentUser.getGroupId();
+        return groupsGateway.getById(id);
     }
 }

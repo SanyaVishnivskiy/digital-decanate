@@ -1,7 +1,10 @@
 package com.example.app.api.stubs;
 
 import com.example.app.api.groups.Models.Group;
+import com.example.app.api.schedule.Models.Schedule;
+import com.example.app.api.schedule.Models.ScheduleItem;
 import com.example.app.api.stubs.groups.GroupsCollection;
+import com.example.app.api.stubs.schedule.ScheduleCollection;
 import com.example.app.api.stubs.user.UsersCollection;
 import com.example.app.api.user.Models.User;
 import com.example.app.logic.user.RolesConstants;
@@ -13,6 +16,16 @@ public class StubsInitializer {
     public static void init() {
         createGroups();
         createUsers();
+        createSchedules();
+    }
+
+    private static void createSchedules() {
+        List<ScheduleItem> items = new ArrayList<>();
+        items.add(new ScheduleItem("", "teacher", "English", "1.101", "3", "Mon", 1, "Lecture"));
+        items.add(new ScheduleItem("", "Aizava", "Math", "1.201", "1", "Mon", 1, "Practice"));
+
+        Schedule schedule = new Schedule("", "1", items);
+        ScheduleCollection.getInstance().addOrUpdate(schedule);
     }
 
     private static void createUsers() {

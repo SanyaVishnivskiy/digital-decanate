@@ -40,6 +40,7 @@ public class UsersCollection {
         User existing = getById(user.getId());
         if (existing == null) {
             users.put(user.getId(), user);
+            return;
         }
 
         User toSave = new User(user);
