@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/create_user_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/create_user"
+                android:textSize="28dp"
+                android:layout_gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TableLayout
+                android:id="@+id/tableLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                >
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/table_borders"
+                    >
+
+                    <TextView
+                        android:id="@+id/create_user_id_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/table_borders"
+                        android:text="@string/user_id_text"
+                        android:textSize="50px"
+                        android:paddingStart="40px"/>
+
+                    <EditText
+                        android:id="@+id/create_user_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textSize="50px" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/table_borders">
+
+                    <TextView
+                        android:id="@+id/create_user_name_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/table_borders"
+                        android:text="@string/user_name_text"
+                        android:textSize="50px"
+                        android:paddingStart="40px"/>
+
+                    <EditText
+                        android:id="@+id/create_user_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textSize="50px" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/table_borders">
+
+                    <TextView
+                        android:id="@+id/create_user_lastName_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/table_borders"
+                        android:text="@string/user_lastName_text"
+                        android:textSize="50px"
+                        android:paddingStart="40px"/>
+
+                    <EditText
+                        android:id="@+id/create_user_lastName"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textSize="50px" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/table_borders"
+                    >
+                    <TextView
+                        android:id="@+id/create_user_faculty_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/table_borders"
+                        android:text="@string/user_faculty_text"
+                        android:textSize="50px"
+                        android:paddingStart="40px"/>
+
+                    <EditText
+                        android:id="@+id/create_user_faculty"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textSize="50px" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/table_borders"
+                    >
+                    <TextView
+                        android:id="@+id/create_user_group_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/table_borders"
+                        android:text="@string/user_group_text"
+                        android:textSize="50px"
+                        android:paddingStart="40px"/>
+
+                    <EditText
+                        android:id="@+id/create_user_group"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textSize="50px" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/table_borders"
+                    >
+                    <TextView
+                        android:id="@+id/create_user_course_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/table_borders"
+                        android:text="@string/user_course_text"
+                        android:textSize="50px"
+                        android:paddingStart="40px"/>
+
+                    <EditText
+                        android:id="@+id/create_user_course"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textSize="50px" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/table_borders"
+                    >
+                    <TextView
+                        android:id="@+id/create_user_student_ticket_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/table_borders"
+                        android:text="@string/user_student_ticket_text"
+                        android:textSize="50px"
+                        android:paddingStart="40px"/>
+
+                    <EditText
+                        android:id="@+id/create_user_student_ticket"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textSize="50px" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/table_borders"
+                    >
+                    <TextView
+                        android:id="@+id/create_user_email_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/table_borders"
+                        android:text="@string/user_email_text"
+                        android:textSize="50px"
+                        android:paddingStart="40px"/>
+
+                    <EditText
+                        android:id="@+id/create_user_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textSize="50px" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/table_borders"
+                    >
+                    <TextView
+                        android:id="@+id/create_user_phone_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/table_borders"
+                        android:text="@string/user_phone_text"
+                        android:textSize="50px"
+                        android:paddingStart="40px"/>
+
+                    <EditText
+                        android:id="@+id/create_user_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textSize="50px" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/table_borders">
+
+                    <TextView
+                        android:id="@+id/create_user_role_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/table_borders"
+                        android:text="@string/user_role_text"
+                        android:textSize="50px"
+                        android:paddingStart="40px"/>
+
+                    <EditText
+                        android:id="@+id/create_user_role"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textSize="50px" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/table_borders">
+
+                    <TextView
+                        android:id="@+id/create_user_password_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/table_borders"
+                        android:text="@string/user_password_text"
+                        android:textSize="50px"
+                        android:paddingStart="40px"/>
+
+                    <EditText
+                        android:id="@+id/create_user_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textSize="50px" />
+                </TableRow>
+
+            </TableLayout>
+
+            <Button
+                android:id="@+id/create_user_save_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/common_Save_text"
+                android:layout_gravity="center"
+                android:onClick="save"
+                />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
