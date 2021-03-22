@@ -8,14 +8,18 @@ public class Group {
     private String id;
     private String number;
     private List<User> users;
+    private String faculty;
     private String headid;
 
-    public Group(String id, String number, List<User> users, String headid) {
+    public Group(String id, String number, List<User> users, String headid,String faculty) {
         this.id = id;
         this.number = number;
         this.users = users;
         this.headid = headid;
+        this.faculty = faculty;
     }
+
+    public String getFaculty(){ return faculty; }
 
     public String getId() {
         return id;

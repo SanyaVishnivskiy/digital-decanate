@@ -21,7 +21,9 @@ public class MarksCollection {
     }
 
     private void Init(){
+
         marks.add(new Marks("1","1",MarksItemsCollection.getInstance().getAll()));
+
         }
 
     public Marks getByGroupId(String id) {

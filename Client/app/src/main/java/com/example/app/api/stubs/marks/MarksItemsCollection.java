@@ -24,8 +24,7 @@ public class MarksItemsCollection {
     }
 
     private void Init(){
-        marksitems.add(new MarksItem("1","1","Math","4",new Date(System.currentTimeMillis())));
-        marksitems.add(new MarksItem("2","1","Math","5",new Date(System.currentTimeMillis())));
+
     }
 
     public MarksItem getById(String id) {

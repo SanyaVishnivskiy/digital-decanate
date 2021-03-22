@@ -31,7 +31,14 @@ public class GroupsCollection {
     }
 
     public void add(Group group) {
-        groups.put(group.getId(), group);
+        Group existing = GroupsCollection.getInstance().getById(group.getId());
+        if(existing == null){
+            groups.put(group.getId(), group);
+            return;
+        }
+
+        groups.put(group.getId(),group);
+
     }
 
     public List<Group> getAll(){

@@ -26,6 +26,9 @@
             android:id="@+id/nav_create_user"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/create_user" />
-
+        <item
+            android:id="@+id/nav_groups"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="create_group"/>
     </group>
 </menu>

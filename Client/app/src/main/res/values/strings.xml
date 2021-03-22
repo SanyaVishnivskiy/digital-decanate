@@ -35,4 +35,13 @@
     <string name="user_password_text">Password:</string>
 
     <string name="common_Save_text">Save</string>
+
+    <string-array name="Subjects">
+        <item>Math</item>
+        <item>OOP</item>
+        <item>Arcitcture</item>
+    </string-array>
+    <string-array name="Strudents">
+        <item>Ivan Ivanov</item>
+    </string-array>
 </resources>
