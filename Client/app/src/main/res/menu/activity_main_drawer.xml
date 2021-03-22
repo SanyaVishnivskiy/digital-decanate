@@ -22,11 +22,15 @@
         <item
             android:id="@+id/nav_groups"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Groups"/>
-
+            android:title="Group"/>
         <item
             android:id="@+id/nav_marks"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Marks"/>
+        <item
+            android:id="@+id/nav_chat"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Chat"/>
+
     </group>
 </menu>

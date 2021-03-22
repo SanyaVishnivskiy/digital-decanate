@@ -33,4 +33,9 @@
         android:name="com.example.app.ui.marks.MarksFragment"
         android:label="Groups"
         tools:layout="@layout/groups_layout" />
+    <fragment
+        android:id="@+id/nav_chat"
+        android:label="Global chat"
+        android:name="com.example.app.ui.chat.ChatFragment"
+        tools:layout="@layout/chat_layout" />
 </navigation>
