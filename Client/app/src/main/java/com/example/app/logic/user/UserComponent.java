@@ -26,8 +26,13 @@ public class UserComponent implements IUserComponent{
 
     @Override
     public User getCurrentUser() {
-        String id = UserContext.getInstance().getCurrentUser().getId();
-        User user = _gateway.getById(id);
+
+        User existing = UserContext.getInstance().getCurrentUser();
+        if (existing == null) {
+            return User.empty();
+        }
+
+        User user = _gateway.getById(existing.getId());
         user = setGroupName(user);
 
         return user;
