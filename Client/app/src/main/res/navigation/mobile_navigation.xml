@@ -25,6 +25,12 @@
     <fragment
         android:id="@+id/nav_groups"
         android:name="com.example.app.ui.group.GroupFragment"
-        android:label="create_group"
+        android:label="Groups"
+        tools:layout="@layout/groups_layout" />
+
+    <fragment
+        android:id="@+id/nav_marks"
+        android:name="com.example.app.ui.marks.MarksFragment"
+        android:label="Groups"
         tools:layout="@layout/groups_layout" />
 </navigation>
