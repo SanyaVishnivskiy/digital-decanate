@@ -45,10 +45,14 @@ public class StubsInitializer {
 
     private static void createGroups(){
         ArrayList<Group> groups = new ArrayList<>();
-        groups.add(new Group("1", "424", new ArrayList<>(), ""));
-        groups.add(new Group("2", "119", new ArrayList<>(), ""));
+        groups.add(new Group("1", "424", new ArrayList<>(), "","F"));
+        groups.add(new Group("2", "119", new ArrayList<>(), "","F"));
 
         GroupsCollection.getInstance().init(groups);
+    }
+
+    private static void createMarks(){
+
     }
 
 }

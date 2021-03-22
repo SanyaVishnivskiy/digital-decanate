@@ -32,18 +32,21 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="144dp"
         android:text="Student:"
         android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.045" />
 
     <EditText
         android:id="@+id/marks_group_name"
-        android:layout_width="242dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="32dp"
+        android:layout_width="241dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="48dp"
+        android:text="424"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="@+id/textView2" />
 
@@ -53,13 +56,92 @@
         android:layout_height="33dp"
         android:layout_marginStart="32dp"
         app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toTopOf="@+id/textView3" />
+        app:layout_constraintTop_toTopOf="@+id/textView3"
+        android:entries="@array/Subjects"/>
 
     <Spinner
         android:id="@+id/marks_student"
         android:layout_width="242dp"
         android:layout_height="33dp"
-        android:layout_marginStart="32dp"
+        android:entries="@array/Strudents"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toTopOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/marks_group_name"
+        app:layout_constraintVertical_bias="0.116" />
+
+    <ScrollView
+        android:layout_width="410dp"
+        android:layout_height="351dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/marks_student"
+        app:layout_constraintVertical_bias="0.148">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableLayout
+                android:id="@+id/marks_table_of_marks"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:text="Date"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:text="Marks"
+                        android:textSize="30dp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:text="15.10"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:text="5"
+                        android:textSize="30dp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:text="20.10"
+                        android:textSize="30dp" />
+
+                    <TextView
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:text="5"
+                        android:textSize="30dp" />
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

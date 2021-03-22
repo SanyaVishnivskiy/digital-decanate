@@ -19,5 +19,14 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Schedule" />
 
+        <item
+            android:id="@+id/nav_groups"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Groups"/>
+
+        <item
+            android:id="@+id/nav_marks"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Marks"/>
     </group>
 </menu>

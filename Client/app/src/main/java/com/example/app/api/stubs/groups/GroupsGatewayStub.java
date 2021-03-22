@@ -10,7 +10,7 @@ public class GroupsGatewayStub implements IGroupsGateway {
 
     @Override
     public void addOrUpdate(Group group) {
-
+        GroupsCollection.getInstance().add(group);
     }
 
     @Override
