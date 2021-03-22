@@ -3,25 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
-
-    <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.app.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
-
-    <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.app.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.app.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+    app:startDestination="@+id/nav_user_profile">
 
     <fragment
         android:id="@+id/nav_user_profile"
@@ -34,10 +16,22 @@
         android:name="com.example.app.ui.createUser.CreateUserFragment"
         android:label="@string/menu_profile"
         tools:layout="@layout/create_user_layout" />
+
+    <fragment
+        android:id="@+id/nav_schedule"
+        android:name="com.example.app.ui.schedule.ScheduleFragment"
+        android:label="Schedule"
+        tools:layout="@layout/schedule_layout" />
     <fragment
         android:id="@+id/nav_groups"
         android:name="com.example.app.ui.group.GroupFragment"
-        android:label="create_group"
+        android:label="Groups"
+        tools:layout="@layout/groups_layout" />
+
+    <fragment
+        android:id="@+id/nav_marks"
+        android:name="com.example.app.ui.marks.MarksFragment"
+        android:label="Groups"
         tools:layout="@layout/groups_layout" />
     <fragment
         android:id="@+id/nav_chat"

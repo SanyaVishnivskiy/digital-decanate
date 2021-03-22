@@ -5,19 +5,6 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
-
-        <item
             android:id="@+id/nav_user_profile"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_profile" />
@@ -26,13 +13,24 @@
             android:id="@+id/nav_create_user"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/create_user" />
+
+        <item
+            android:id="@+id/nav_schedule"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Schedule" />
+
         <item
             android:id="@+id/nav_groups"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Group"/>
         <item
+            android:id="@+id/nav_marks"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Marks"/>
+        <item
             android:id="@+id/nav_chat"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Chat"/>
+
     </group>
 </menu>

@@ -7,22 +7,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.app.R;
-import com.example.app.api.user.Models.User;
-import com.example.app.api.user.Models.UserWithChangePasswordModel;
 import com.example.app.api.user.Models.UserWithPassword;
-import com.example.app.logic.user.RolesConstants;
 import com.example.app.ui.common.ValidationError;
+import com.example.app.ui.schedule.ScheduleConverter;
 import com.example.app.ui.user.UserConverter;
-import com.example.app.ui.user.UserModelWithViews;
 import com.example.app.ui.user.UserValidator;
-import com.example.app.ui.user.UserViewModel;
 
 public class CreateUserFragment extends Fragment {
     private CreateUserViewModel userViewModel;

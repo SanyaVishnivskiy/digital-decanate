@@ -24,7 +24,7 @@ public class AuthActivity extends AppCompatActivity {
         _gateway = new AuthGatewayFactory().create();
 
         //TODO: comment, did to test without need to login every time
-        disableLogin();
+        //disableLogin();
     }
 
     private void disableLogin() {

@@ -15,6 +15,10 @@ public class User {
 
     private String role;
 
+    public static User empty() {
+        return new User("", "", "", "", "", "", "","",0,"");
+    }
+
     public String getId() {
         return id;
     }

@@ -13,17 +13,17 @@ public class UserConverter {
 
     private UserWithChangePasswordModel toUserWithChangePasswordModel(UserModelWithViews user, ChangePasswordModel passModel) {
         return new UserWithChangePasswordModel(
-            String.valueOf(user.getId().getText()),
-            String.valueOf(user.getName().getText()),
-            String.valueOf(user.getLastName().getText()),
-            String.valueOf(user.getPhoneNumber().getText()),
-            String.valueOf(user.getEmail().getText()),
-            String.valueOf(user.getStudentTicket().getText()),
-            String.valueOf(user.getGroupName().getText()),
-            String.valueOf(user.getFaculty().getText()),
-            Integer.parseInt(String.valueOf(user.getCourse().getText())),
-            String.valueOf(user.getRole().getText()),
-            passModel
+                String.valueOf(user.getId().getText()),
+                String.valueOf(user.getName().getText()),
+                String.valueOf(user.getLastName().getText()),
+                String.valueOf(user.getPhoneNumber().getText()),
+                String.valueOf(user.getEmail().getText()),
+                String.valueOf(user.getStudentTicket().getText()),
+                String.valueOf(user.getGroupName().getText()),
+                String.valueOf(user.getFaculty().getText()),
+                Integer.parseInt(String.valueOf(user.getCourse().getText())),
+                String.valueOf(user.getRole().getText()),
+                passModel
         );
     }
 
@@ -33,10 +33,10 @@ public class UserConverter {
             return null;
 
         return new ChangePasswordModel(
-            String.valueOf(user.getEmail().getText()),
-            String.valueOf(user.getOldPassword().getText()),
-            String.valueOf(user.getNewPassword().getText()),
-            String.valueOf(user.getConfirmPassword().getText())
+                String.valueOf(user.getEmail().getText()),
+                String.valueOf(user.getOldPassword().getText()),
+                String.valueOf(user.getNewPassword().getText()),
+                String.valueOf(user.getConfirmPassword().getText())
         );
     }
 
